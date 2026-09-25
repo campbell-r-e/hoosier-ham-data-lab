@@ -1,0 +1,19 @@
+[project]
+name = "hoosier-ham-data-lab"
+version = "0.1.0"
+description = "Beginner data-analysis exercises on the FCC amateur radio license database, with pandas and polars."
+requires-python = ">=3.11"
+dependencies = [
+    "pandas>=2.2",
+    "polars>=1.0",
+    "pyarrow>=17",
+]
+
+[dependency-groups]
+dev = ["pytest>=8"]
+
+[tool.uv]
+package = false
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

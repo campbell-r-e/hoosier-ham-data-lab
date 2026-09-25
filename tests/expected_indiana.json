@@ -1,0 +1,2407 @@
+{
+ "count_active": {
+  "columns": [
+   "answer"
+  ],
+  "rows": [
+   [
+    16852
+   ]
+  ]
+ },
+ "lookup": {
+  "columns": [
+   "call_sign",
+   "status",
+   "operator_class",
+   "service",
+   "city",
+   "state",
+   "grant_date",
+   "expired_date"
+  ],
+  "rows": [
+   [
+    "WB9HXG",
+    "A",
+    null,
+    "HA",
+    "MUNCIE",
+    "IN",
+    "2020-09-28",
+    "2030-11-12"
+   ]
+  ]
+ },
+ "compare_states": {
+  "columns": [
+   "state",
+   "operators",
+   "clubs"
+  ],
+  "rows": [
+   [
+    "IN",
+    16558,
+    294
+   ],
+   [
+    "OH",
+    0,
+    0
+   ]
+  ]
+ },
+ "class_mix": {
+  "columns": [
+   "license_class",
+   "state_pct",
+   "us_pct"
+  ],
+  "rows": [
+   [
+    "Technician",
+    47.2,
+    47.2
+   ],
+   [
+    "General",
+    27.2,
+    27.2
+   ],
+   [
+    "Extra",
+    20.7,
+    20.7
+   ],
+   [
+    "Advanced",
+    4.0,
+    4.0
+   ],
+   [
+    "Novice",
+    0.9,
+    0.9
+   ]
+  ]
+ },
+ "top_cities": {
+  "columns": [
+   "city",
+   "operators"
+  ],
+  "rows": [
+   [
+    "INDIANAPOLIS",
+    1409
+   ],
+   [
+    "FORT WAYNE",
+    760
+   ],
+   [
+    "BLOOMINGTON",
+    393
+   ],
+   [
+    "EVANSVILLE",
+    355
+   ],
+   [
+    "TERRE HAUTE",
+    322
+   ],
+   [
+    "SOUTH BEND",
+    294
+   ],
+   [
+    "CARMEL",
+    266
+   ],
+   [
+    "KOKOMO",
+    257
+   ],
+   [
+    "LAFAYETTE",
+    248
+   ],
+   [
+    "FISHERS",
+    232
+   ],
+   [
+    "ANDERSON",
+    228
+   ],
+   [
+    "COLUMBUS",
+    224
+   ],
+   [
+    "NOBLESVILLE",
+    222
+   ],
+   [
+    "VALPARAISO",
+    221
+   ],
+   [
+    "WEST LAFAYETTE",
+    218
+   ],
+   [
+    "GREENWOOD",
+    212
+   ],
+   [
+    "ELKHART",
+    198
+   ],
+   [
+    "MUNCIE",
+    177
+   ],
+   [
+    "GREENFIELD",
+    147
+   ],
+   [
+    "GOSHEN",
+    146
+   ]
+  ]
+ },
+ "renewals_due": {
+  "columns": [
+   "month",
+   "licenses"
+  ],
+  "rows": [
+   [
+    "2026-09",
+    12
+   ],
+   [
+    "2026-10",
+    81
+   ],
+   [
+    "2026-11",
+    154
+   ],
+   [
+    "2026-12",
+    134
+   ],
+   [
+    "2027-01",
+    123
+   ],
+   [
+    "2027-02",
+    169
+   ],
+   [
+    "2027-03",
+    183
+   ],
+   [
+    "2027-04",
+    136
+   ],
+   [
+    "2027-05",
+    171
+   ],
+   [
+    "2027-06",
+    134
+   ],
+   [
+    "2027-07",
+    126
+   ],
+   [
+    "2027-08",
+    111
+   ],
+   [
+    "2027-09",
+    68
+   ]
+  ]
+ },
+ "call_formats": {
+  "columns": [
+   "format",
+   "licenses",
+   "vanity_pct"
+  ],
+  "rows": [
+   [
+    "2x3",
+    11089,
+    3.7
+   ],
+   [
+    "1x3",
+    3686,
+    51.6
+   ],
+   [
+    "2x2",
+    887,
+    20.6
+   ],
+   [
+    "2x1",
+    464,
+    55.6
+   ],
+   [
+    "1x2",
+    432,
+    82.2
+   ]
+  ]
+ },
+ "clubs": {
+  "columns": [
+   "call_sign",
+   "club",
+   "city",
+   "trustee_call_sign"
+  ],
+  "rows": [
+   [
+    "N9VI",
+    "Kendallville Contesters Club ARS",
+    "ALBION",
+    "K8IAT"
+   ],
+   [
+    "KD9SEA",
+    "Madison County Amateur Radio Contest Club",
+    "ANDERSON",
+    "W9BLF"
+   ],
+   [
+    "W9OBH",
+    "Anderson Repeater Club, Inc.",
+    "ANDERSON",
+    "KA9SYP"
+   ],
+   [
+    "W9VCF",
+    "MADISON COUNTY ARC INC",
+    "ANDERSON",
+    "N9DR"
+   ],
+   [
+    "WA9EOC",
+    "CHIEF ANDERSON AMATEUR RADIO CLUB",
+    "ANDERSON",
+    "WA9JWL"
+   ],
+   [
+    "K9HD",
+    "LAND OF LAKES AMATEUR RADIO CLUB",
+    "ANGOLA",
+    "N9YK"
+   ],
+   [
+    "KD9SHK",
+    "Trine Amateur Radio Club",
+    "ANGOLA",
+    "KW9S"
+   ],
+   [
+    "W9ECG",
+    "Steuben County Races Ares Emergency Communications Group",
+    "ANGOLA",
+    "KC8UBC"
+   ],
+   [
+    "AK9DE",
+    "DE K9 AMATEUR RADIO CLUB",
+    "ARGOS",
+    "K9DE"
+   ],
+   [
+    "K9ZLQ",
+    "MARSHALL COUNTY AMATEUR RADIO CLUB",
+    "ARGOS",
+    "K9ILU"
+   ],
+   [
+    "W9OU",
+    "NORTHEASTERN INDIANA AMATEUR RADIO ASSOCIATION",
+    "AUBURN",
+    "KB9QG"
+   ],
+   [
+    "W9WWV",
+    "FORMIDABLE AMATEUR RADIO TEAM",
+    "BARGERSVILLE",
+    "KB9UJE"
+   ],
+   [
+    "KA9SWI",
+    "Indiana Repeater Society Inc",
+    "BEAN BLOSSOM",
+    "W9DBA"
+   ],
+   [
+    "W9BNL",
+    "Stars Amateur Radio Club",
+    "BEDFORD",
+    "W9NVY"
+   ],
+   [
+    "W9GUS",
+    "Hoosier Hills Ham Club Inc",
+    "BEDFORD",
+    "K9US"
+   ],
+   [
+    "W9QYQ",
+    "HOOSIER HILLS HAM CLUB INC",
+    "BEDFORD",
+    "KD9IGT"
+   ],
+   [
+    "KB9KYM",
+    "ADAMS COUNTY AMATEUR RADIO CLUB",
+    "BERNE",
+    "KD9CES"
+   ],
+   [
+    "W9HD",
+    "SHAWNEE REPEATER INC",
+    "BLOOMFIELD",
+    "N9CJM"
+   ],
+   [
+    "K9DIY",
+    "BLOOMINGTON AMATEUR RADIO CLUB INC",
+    "BLOOMINGTON",
+    "AC9ML"
+   ],
+   [
+    "K9IU",
+    "K9IU Amateur Radio Club At Indiana University",
+    "BLOOMINGTON",
+    "N9VKU"
+   ],
+   [
+    "K9SOU",
+    "Bloomington High School South Amateur Radio Club",
+    "BLOOMINGTON",
+    "W9YW"
+   ],
+   [
+    "N1SOC",
+    "HAMS Serving Our Communities Inc",
+    "BLOOMINGTON",
+    "KD9CTZ"
+   ],
+   [
+    "N9SIA",
+    "SOUTHERN INDIANA AMATEUR RADIO ASSOCIATION",
+    "BLOOMINGTON",
+    "W9LDC"
+   ],
+   [
+    "W9AYW",
+    "WELLS COUNTY AMATEUR RADIO CLUB",
+    "BLUFFTON",
+    "AB9HP"
+   ],
+   [
+    "W9BRN",
+    "Wells County Historical Society",
+    "BLUFFTON",
+    "WD9FAI"
+   ],
+   [
+    "KC9SOC",
+    "Warrick County ARES RACES",
+    "BOONVILLE",
+    "K9SRC"
+   ],
+   [
+    "K9IPL",
+    "INDIANAPOLIS POWER & LIGHT AMATEUR RADIO CLUB",
+    "BROWNSBURG",
+    "WA9FDO"
+   ],
+   [
+    "K9LPW",
+    "CENTRAL INDIANA REPEATER ASSN",
+    "BROWNSBURG",
+    "WA9FDO"
+   ],
+   [
+    "W9ISF",
+    "Indiana State Fair ARC",
+    "BROWNSBURG",
+    "KJ9B"
+   ],
+   [
+    "W9NWS",
+    "CENTRAL INDIANA SKYWARN CLUB",
+    "BROWNSBURG",
+    "N9GDR"
+   ],
+   [
+    "W9EOC",
+    "OLD POST AMATEUR RADIO SOCIETY",
+    "BRUCEVILLE",
+    "NM9R"
+   ],
+   [
+    "K9LHS",
+    "Lincoln Middle High School Amateur Radio Club",
+    "CAMBRIDGE CITY",
+    "W9BSC"
+   ],
+   [
+    "KE9EZI",
+    "Alliance Amateur Radio Network",
+    "CAMBY",
+    "KE9DQS"
+   ],
+   [
+    "K9EOC",
+    "Hamilton County Emergency Communications Group",
+    "CARMEL",
+    "KJ9M"
+   ],
+   [
+    "NG9C",
+    "CENTRAL INDIANA CONTEST CLUB",
+    "CARMEL",
+    "W9YE"
+   ],
+   [
+    "N9TAE",
+    "Ridge Runners ARC",
+    "CARTHAGE",
+    "N9EIT"
+   ],
+   [
+    "KD9LLH",
+    "Patoka Valley Amateur Radio Club",
+    "CELESTINE",
+    "KA9GDW"
+   ],
+   [
+    "W9SAL",
+    "ALL STATES RADIO CLUB",
+    "CHESTERTON",
+    "W9DWS"
+   ],
+   [
+    "KC9FTG",
+    "Spencer Co EMA ARC",
+    "CHRISNEY",
+    "W9DRB"
+   ],
+   [
+    "N9CCA",
+    "Clay County Auxcom",
+    "CLAY CITY",
+    "K9HX"
+   ],
+   [
+    "W9SKI",
+    "Illiana Skywarn",
+    "CLAY CITY",
+    "K9HX"
+   ],
+   [
+    "K9BLU",
+    "Blueline Users Group",
+    "COLUMBIA CITY",
+    "K9KOP"
+   ],
+   [
+    "KB9PPX",
+    "WHITLEY COUNTY EMERGENCY RADIO CLUB",
+    "COLUMBIA CITY",
+    "N9WNH"
+   ],
+   [
+    "KC9ANF",
+    "WHITLEY COUNTY EMA RADIO CLUB",
+    "COLUMBIA CITY",
+    "N9RM"
+   ],
+   [
+    "N9BCP",
+    "21 Repeater Group",
+    "COLUMBIA CITY",
+    "K9NDU"
+   ],
+   [
+    "NF9B",
+    "Wildcat Creek DX And Contest Club",
+    "COLUMBIA CITY",
+    "N9SE"
+   ],
+   [
+    "WC9AR",
+    "WHITLEY COUNTY AMATEUR RADIO CLUB",
+    "COLUMBIA CITY",
+    "KD9ODO"
+   ],
+   [
+    "KD9IWF",
+    "Pete Lenges Memorial Radio Association",
+    "COLUMBUS",
+    "K9KER"
+   ],
+   [
+    "N9GRR",
+    "BEARS",
+    "COLUMBUS",
+    "KC9FQ"
+   ],
+   [
+    "W1MUY",
+    "COLUMBUS WEST RADIO CLUB",
+    "COLUMBUS",
+    "N9KR"
+   ],
+   [
+    "W9ALQ",
+    "Columbus Amateur Radio Club",
+    "COLUMBUS",
+    "KB5SDX"
+   ],
+   [
+    "W9SCI",
+    "South Central Indiana Communications Support Group, Inc.",
+    "COLUMBUS",
+    "K9JAJ"
+   ],
+   [
+    "WB9AEP",
+    "COLUMBUS AMATEUR RADIO CLUB",
+    "COLUMBUS",
+    "KA9OPL"
+   ],
+   [
+    "KB9RVR",
+    "FAYETTE COUNTY REPEATER GROUP",
+    "CONNERSVILLE",
+    "N9TU"
+   ],
+   [
+    "KD9CVF",
+    "WHITEWATER VALLEY DIGITAL SYSOP CLUB",
+    "CONNERSVILLE",
+    "KB9JDB"
+   ],
+   [
+    "WX9MC",
+    "The Livewires Radio Group",
+    "CRAWFORDSVILLE",
+    "KA9WLU"
+   ],
+   [
+    "W9LJ",
+    "LAKE COUNTY AMAT RAD CLB",
+    "CROWN POINT",
+    "N9CA"
+   ],
+   [
+    "KD9EST",
+    "Hendricks County Experimenters",
+    "DANVILLE",
+    "KC9WRY"
+   ],
+   [
+    "W9HCA",
+    "Hendricks County ARES",
+    "DANVILLE",
+    "W9GKC"
+   ],
+   [
+    "WA9LQE",
+    "PLAYTIME ARES RADIO CLUB",
+    "DECATUR",
+    "N9GU"
+   ],
+   [
+    "KC9AK",
+    "Dugger Amateur Radio Club",
+    "DUGGER",
+    "KD9CVE"
+   ],
+   [
+    "W9SCA",
+    "SULLIVAN COUNTY AUXCOM",
+    "DUGGER",
+    "KB9ZGN"
+   ],
+   [
+    "KD9OXB",
+    "East Chicago Lighthouse Charter School Technology And Amateur Radio Club",
+    "EAST CHICAGO",
+    "KD9OOL"
+   ],
+   [
+    "KD9QKH",
+    "Switzerland County ARC",
+    "EAST ENTERPRISE",
+    "KB8FCL"
+   ],
+   [
+    "K9LAS",
+    "Louisville Astronomical Society",
+    "ELIZABETH",
+    "K9GX"
+   ],
+   [
+    "KY9IN",
+    "Kentuckiana Radiosport Association",
+    "ELIZABETH",
+    "K9GX"
+   ],
+   [
+    "W9NTK",
+    "HAAK FLOCK AMATEUR RADIO SOCIETY",
+    "ELIZABETHTOWN",
+    "KS9J"
+   ],
+   [
+    "W9LZX",
+    "ELKHART COUNTY RADIO ASSOCIATION",
+    "ELKHART",
+    "K9KD"
+   ],
+   [
+    "W9RNL",
+    "N.W. MADISON COUNTY D STARS",
+    "ELWOOD",
+    "N9QFB"
+   ],
+   [
+    "W9SHO",
+    "SOUTHERN HILLS OPERATORS",
+    "ENGLISH",
+    "K9RBH"
+   ],
+   [
+    "KD9PJS",
+    "Ed Charles Memorial Group",
+    "ETNA GREEN",
+    "KB9WHL"
+   ],
+   [
+    "KE9ELS",
+    "Hamlink Amateur Radio Club",
+    "EVANSVILLE",
+    "N9ISU"
+   ],
+   [
+    "W9MAR",
+    "Midwest Amateur Radio Society",
+    "EVANSVILLE",
+    "AB9JT"
+   ],
+   [
+    "W9OG",
+    "TRI STATE AMATEUR RADIO SOCIETY",
+    "EVANSVILLE",
+    "WB9YIG"
+   ],
+   [
+    "W9SIR",
+    "SOUTHERN INDIANA RADIO",
+    "EVANSVILLE",
+    "KD4SIR"
+   ],
+   [
+    "WA9C",
+    "Vanderburgh County Auxcomm",
+    "EVANSVILLE",
+    "KC9TYA"
+   ],
+   [
+    "WW2LST",
+    "USS LST 325 AMATEUR RADIO CLUB",
+    "EVANSVILLE",
+    "N9XAW"
+   ],
+   [
+    "W9EVX",
+    "KB Technologies dba Elite Technologies",
+    "FARMERSBURG",
+    "W9KTB"
+   ],
+   [
+    "KA9MCS",
+    "MCS AMATEUR RADIO CLUB",
+    "FARMLAND",
+    "N1PJ"
+   ],
+   [
+    "W9ICE",
+    "INDIANAPOLIS CARMEL EXPERIMENTERS",
+    "FISHERS",
+    "WB9YCZ"
+   ],
+   [
+    "W9JP",
+    "INDIANAPOLIS RADIO CLUB",
+    "FISHERS",
+    "W9TC"
+   ],
+   [
+    "W9KPN",
+    "INDIANAPOLIS POLICE RADIO CLUB",
+    "FISHERS",
+    "K9ZH"
+   ],
+   [
+    "WR9AND",
+    "HAMILTON COUNTY AMATEUR GROUP",
+    "FISHERS",
+    "WB9YCZ"
+   ],
+   [
+    "K4NAR",
+    "NAVY AMATEUR RADIO CLUB",
+    "FLOYDS KNOBS",
+    "N9CVA"
+   ],
+   [
+    "K9MPB",
+    "Most Precious Blood School",
+    "FORT WAYNE",
+    "AE9YL"
+   ],
+   [
+    "K9NCS",
+    "MAD ANTHONY RADIO CLUB",
+    "FORT WAYNE",
+    "N9MJF"
+   ],
+   [
+    "K9SHS",
+    "R Nelson Snider High School Amateur Radio Club",
+    "FORT WAYNE",
+    "KD9NRT"
+   ],
+   [
+    "KD9PE",
+    "Memorial Park MS - Pirates Engineering",
+    "FORT WAYNE",
+    "N9OBL"
+   ],
+   [
+    "KE9GDN",
+    "PFW Air And Space Research Association",
+    "FORT WAYNE",
+    "AC9EZ"
+   ],
+   [
+    "KE9KEK",
+    "Kekionga Middle School Amateur Radio Club",
+    "FORT WAYNE",
+    "W2MAU"
+   ],
+   [
+    "NE9EE",
+    "Northeast Electronic Enthusiasts",
+    "FORT WAYNE",
+    "K9FW"
+   ],
+   [
+    "W9BHR",
+    "Kekionga Amateur Radio Club",
+    "FORT WAYNE",
+    "KB9OZE"
+   ],
+   [
+    "W9FEZ",
+    "MIZPAH SHRINE RADIO UNIT",
+    "FORT WAYNE",
+    "K9EJS"
+   ],
+   [
+    "W9INX",
+    "ALLEN CO AMA RAD TECHNICAL SOC INC",
+    "FORT WAYNE",
+    "W9LKH"
+   ],
+   [
+    "W9TE",
+    "FORT WAYNE RADIO CLUB",
+    "FORT WAYNE",
+    "WB9RUS"
+   ],
+   [
+    "WB9YER",
+    "ALLEN COUNTY AMATEUR RADIO EMERG CLUB",
+    "FORT WAYNE",
+    "KB9WWM"
+   ],
+   [
+    "WC9IN",
+    "West Central Indiana Amateur Radio",
+    "FOWLER",
+    "K9XG"
+   ],
+   [
+    "K9CCA",
+    "CLINTON COUNTY AMATEUR RADIO EMERGENCY SERVICES",
+    "FRANKFORT",
+    "WK9X"
+   ],
+   [
+    "KC9HNP",
+    "Clinton County V.H.F. Amateur Radio Club, Inc.",
+    "FRANKFORT",
+    "N9SFA"
+   ],
+   [
+    "W9IMH",
+    "Indiana Masonic Home Amateur Radio Club",
+    "FRANKLIN",
+    "WA9VBG"
+   ],
+   [
+    "W9WIN",
+    "AEROHEAD REPEATER ORG",
+    "FREETOWN",
+    "NA9VY"
+   ],
+   [
+    "KC9HAJ",
+    "Amateur Radio Military Appreciation Day",
+    "FT WAYNE",
+    "KB9IBW"
+   ],
+   [
+    "WA9SPR",
+    "Henry O Sheets Sr Memorial ARC",
+    "GARY",
+    "KA9GKT"
+   ],
+   [
+    "W9EBN",
+    "GRANT COUNTY AMATEUR RADIO CLUB",
+    "GAS CITY",
+    "KB9CRA"
+   ],
+   [
+    "W9DUK",
+    "DELAWARE AMATEUR RADIO ASSN INC",
+    "GASTON",
+    "WA9AGG"
+   ],
+   [
+    "AA9BL",
+    "Long Family DX Contest Group Of Goshen IN",
+    "GOSHEN",
+    "AA9DL"
+   ],
+   [
+    "K9TSM",
+    "GOSHEN AMATEUR RADIO CLUB",
+    "GOSHEN",
+    "N9YOD"
+   ],
+   [
+    "K9WJU",
+    "GOSHEN AMATEUR RADIO CLUB",
+    "GOSHEN",
+    "W9JOE"
+   ],
+   [
+    "KP4US",
+    "Goshen DX Assoc.",
+    "GOSHEN",
+    "KC9CDS"
+   ],
+   [
+    "N9HZ",
+    "Brent Zook Memorial Group",
+    "GOSHEN",
+    "WT9U"
+   ],
+   [
+    "WA9NJU",
+    "GOSHEN COLLEGE AMATEUR RADIO CLUB",
+    "GOSHEN",
+    "KA9SRY"
+   ],
+   [
+    "W9TTD",
+    "Tinman Acres Amateur Radio Club",
+    "GOSPORT",
+    "KD9LES"
+   ],
+   [
+    "WB9STA",
+    "INDIANA EXPERIMENTAL RADIO BUNCH",
+    "GOSPORT",
+    "WK9A"
+   ],
+   [
+    "NA9O",
+    "INDIANA CONTEST GROUP",
+    "GRANGER",
+    "K9TI"
+   ],
+   [
+    "W9YJ",
+    "DE PAUW UNIV AMATEUR RADIO CLUB",
+    "GREENCASTLE",
+    "KC9QBN"
+   ],
+   [
+    "WB9EOC",
+    "PUTNAM COUNTY RACES TEAM",
+    "GREENCASTLE",
+    "KC9RBE"
+   ],
+   [
+    "KC9SRD",
+    "Hancock County Emergency Mgmt",
+    "GREENFIELD",
+    "K9HCA"
+   ],
+   [
+    "W9ATG",
+    "HANCOCK AMATEUR RADIO CLUB",
+    "GREENFIELD",
+    "WB9CNE"
+   ],
+   [
+    "N9LQP",
+    "AMATEUR RADIO OF DECATUR COUNTY INC",
+    "GREENSBURG",
+    "KD9ZNB"
+   ],
+   [
+    "W9KRC",
+    "KOKOMO REPEATER CLUB",
+    "GREENTOWN",
+    "KD9WZR"
+   ],
+   [
+    "W9MID",
+    "MID STATE AMATEUR RADIO CLUB",
+    "GREENWOOD",
+    "KQ9Y"
+   ],
+   [
+    "W9SU",
+    "Indy United ARC",
+    "GREENWOOD",
+    "W9IND"
+   ],
+   [
+    "WN9ICB",
+    "Indiana Contest Brigade",
+    "GREENWOOD",
+    "W9IND"
+   ],
+   [
+    "K9IX",
+    "CALUMET AMATEUR RADIO ENTHUSIASTS",
+    "GRIFFITH",
+    "KE9FZ"
+   ],
+   [
+    "W9PAR",
+    "Prepper Comms Amateur Radio Club",
+    "HARDINSBURG",
+    "KC9ZKM"
+   ],
+   [
+    "K9VND",
+    "Blackford Amateur Radio Club",
+    "HARTFORD CITY",
+    "KC9OYW"
+   ],
+   [
+    "W9EMA",
+    "LAKE COUNTY EMERGENCY MGT COMM  GROUP",
+    "HIGHLAND",
+    "W9FXT"
+   ],
+   [
+    "WB9SA",
+    "Scouting America Crew 272",
+    "HILLSBORO",
+    "K9BKW"
+   ],
+   [
+    "K9HC",
+    "HUNTINGTON COUNTY AMATEUR RADIO SOCIETY",
+    "HUNTINGTON",
+    "K9AS"
+   ],
+   [
+    "W9ECC",
+    "Huntington County Emergency Communications Club",
+    "HUNTINGTON",
+    "KC9HYW"
+   ],
+   [
+    "WX9EC",
+    "Huntington County Emergency Communications Club",
+    "HUNTINGTON",
+    "KC9HYW"
+   ],
+   [
+    "K0LTS",
+    "Indianapolis Pro Football Fans Radio Club",
+    "INDIANAPOLIS",
+    "W9BRC"
+   ],
+   [
+    "K9BRL",
+    "Broad Ripple Lodge ARC",
+    "INDIANAPOLIS",
+    "KC9YTJ"
+   ],
+   [
+    "K9ERC",
+    "Indy ERC HAM Radio Club",
+    "INDIANAPOLIS",
+    "KB2IAC"
+   ],
+   [
+    "K9IP",
+    "DIGITAL RADIO EXPERIMENTERS GROUP",
+    "INDIANAPOLIS",
+    "K9DC"
+   ],
+   [
+    "K9TAL",
+    "The American Legion Amateur Radio Club",
+    "INDIANAPOLIS",
+    "N9MEM"
+   ],
+   [
+    "K9TNW",
+    "HEADQUARTERS RADIO CLUB",
+    "INDIANAPOLIS",
+    "AA9XY"
+   ],
+   [
+    "KU9R",
+    "Blown Fuses ARC",
+    "INDIANAPOLIS",
+    "N9UNX"
+   ],
+   [
+    "N9DMR",
+    "Hoosier DMR",
+    "INDIANAPOLIS",
+    "W9AMT"
+   ],
+   [
+    "N9EDS",
+    "Indianapolis Salvation Army EDS Radio Club",
+    "INDIANAPOLIS",
+    "KC9TQA"
+   ],
+   [
+    "N9NS",
+    "Hoosier DX And Contest Club",
+    "INDIANAPOLIS",
+    "W9RE"
+   ],
+   [
+    "W1CEN",
+    "CEN READY COMMUNICATIONS",
+    "INDIANAPOLIS",
+    "N4RFI"
+   ],
+   [
+    "W2VOX",
+    "VOXX Employees Amateur Radio Association",
+    "INDIANAPOLIS",
+    "W3FJR"
+   ],
+   [
+    "W9CRC",
+    "Cyberia Radio Club",
+    "INDIANAPOLIS",
+    "KG9AE"
+   ],
+   [
+    "W9EI",
+    "ALBERT A RAINOUS MEMORIAL RADIO CLUB",
+    "INDIANAPOLIS",
+    "K9DC"
+   ],
+   [
+    "W9EMO",
+    "INDPLS-MARION COUNTY EMER MGMT AGENCY",
+    "INDIANAPOLIS",
+    "N9ALD"
+   ],
+   [
+    "W9FBZ",
+    "NAVAL AVIONICS CENTER ARC",
+    "INDIANAPOLIS",
+    "N9PCT"
+   ],
+   [
+    "W9IMS",
+    "Indianapolis Motor Speedway Amateur Radio Club",
+    "INDIANAPOLIS",
+    "N9KT"
+   ],
+   [
+    "W9IRA",
+    "INDIANAPOLIS REPEATER ASSOCIATION INC",
+    "INDIANAPOLIS",
+    "NF9H"
+   ],
+   [
+    "W9MA",
+    "Mid America ARC",
+    "INDIANAPOLIS",
+    "W9GTA"
+   ],
+   [
+    "W9PU",
+    "IUPUI AMATEUR RADIO ASSOCIATION",
+    "INDIANAPOLIS",
+    "W9EJB"
+   ],
+   [
+    "W9RCA",
+    "RCA AMATEUR RAD CLB OF INDIANAPOLIS",
+    "INDIANAPOLIS",
+    "K9RU"
+   ],
+   [
+    "W9SEM",
+    "IDHS RACES TEAM",
+    "INDIANAPOLIS",
+    "KD9ONC"
+   ],
+   [
+    "W9UFO",
+    "THE PURVEYORS OF DOOM",
+    "INDIANAPOLIS",
+    "WS9H"
+   ],
+   [
+    "W9VW",
+    "Innovation In DX And Contesting, LLC",
+    "INDIANAPOLIS",
+    "K9LZJ"
+   ],
+   [
+    "WD9BSA",
+    "Bert C Johnson Memorial Amateur Station",
+    "INDIANAPOLIS",
+    "N9EZW"
+   ],
+   [
+    "WW2IND",
+    "U.S.S. Indianapolis (ca-35) Amateur Radio Station",
+    "INDIANAPOLIS",
+    "W9SSE"
+   ],
+   [
+    "KB9LHX",
+    "DUBOIS COUNTY AMATEUR RADIO",
+    "JASPER",
+    "KB9TJU"
+   ],
+   [
+    "KD9KOB",
+    "Starfleet Amateur Radio Club",
+    "JEFFERSONVILLE",
+    "KC9DBM"
+   ],
+   [
+    "KN9OX",
+    "KN9OX Repeater Association",
+    "KNOX",
+    "W3ML"
+   ],
+   [
+    "W9JOZ",
+    "STARKE COUNTY AMATEUR RADIO CLUB",
+    "KNOX",
+    "KC8PKY"
+   ],
+   [
+    "W9NWI",
+    "Northwest Indiana DX Club",
+    "KNOX",
+    "KD9HL"
+   ],
+   [
+    "K9MXG",
+    "807 Club Of Kokomo",
+    "KOKOMO",
+    "KI1U"
+   ],
+   [
+    "W9HRB",
+    "Hoosier Repeater Builders",
+    "KOKOMO",
+    "W9SMJ"
+   ],
+   [
+    "K9JSI",
+    "LA PORTE COUNTY AMATEUR RADIO CLUB",
+    "LA PORTE",
+    "AC9HO"
+   ],
+   [
+    "KD9EOE",
+    "Amateur Radio Science Enthusiasts",
+    "LA PORTE",
+    "KD9DDH"
+   ],
+   [
+    "K9IN",
+    "Indiana Radio Experimenters",
+    "LAFAYETTE",
+    "WR9A"
+   ],
+   [
+    "KC9LLD",
+    "W.I.N.G.S.",
+    "LAFAYETTE",
+    "KC9QVH"
+   ],
+   [
+    "KC9LTK",
+    "WINGS",
+    "LAFAYETTE",
+    "KC9LSS"
+   ],
+   [
+    "W9LDX",
+    "Lafayette DX Association",
+    "LAFAYETTE",
+    "N9LF"
+   ],
+   [
+    "W9NSA",
+    "Amateur Radio Experimenters",
+    "LAFAYETTE",
+    "WR9A"
+   ],
+   [
+    "W9REG",
+    "TIPPECANOE AMATEUR RADIO ASSOC INC",
+    "LAFAYETTE",
+    "WO9G"
+   ],
+   [
+    "W9TCA",
+    "Tippecanoe County ARES",
+    "LAFAYETTE",
+    "N9GKE"
+   ],
+   [
+    "WI9RES",
+    "Western Indiana Radio Emergency Services",
+    "LAFAYETTE",
+    "W9TN"
+   ],
+   [
+    "KI9U",
+    "AMATEUR RADIO ASSOCIATION OF NEWTON COUNTY",
+    "LAKE VILLAGE",
+    "KA9E"
+   ],
+   [
+    "KC9OLF",
+    "SOUTHERN INDIANA TRI-COUNTY ARC",
+    "LEAVENWORTH",
+    "N9SOB"
+   ],
+   [
+    "W9AIM",
+    "Indiana Elmer Network",
+    "LEBANON",
+    "W9THR"
+   ],
+   [
+    "W9GCR",
+    "Greene County Amateur Repeater Association",
+    "LINTON",
+    "W9XTZ"
+   ],
+   [
+    "W9VMW",
+    "CASS COUNTY AMATEUR RADIO CLUB",
+    "LOGANSPORT",
+    "KA9BYN"
+   ],
+   [
+    "KD9FDH",
+    "Royal Rangers Amateur Radio Club Mag",
+    "MADISON",
+    "KD9VAG"
+   ],
+   [
+    "W9EFU",
+    "CLIFTY AMATEUR RADIO SOCIETY",
+    "MADISON",
+    "N7NSX"
+   ],
+   [
+    "WA9IVY",
+    "Ivy Tech Community College Amateur Radio Club",
+    "MADISON",
+    "KF9OO"
+   ],
+   [
+    "K9IZ",
+    "Iguana Air Corp Contest Club",
+    "MARION",
+    "AJ9C"
+   ],
+   [
+    "KC9SPX",
+    "GRANT COUNTY RACES",
+    "MARION",
+    "N9GTL"
+   ],
+   [
+    "KE9FKL",
+    "HAMFAM RADIO",
+    "MARION",
+    "KD9VFA"
+   ],
+   [
+    "W9ZSK",
+    "SOUTHERN GATEWAY RADIO LEAGUE",
+    "MARTINSVILLE",
+    "N9AWU"
+   ],
+   [
+    "KC9PBQ",
+    "Jack Lowry Memorial Group",
+    "MENTONE",
+    "KC9NWK"
+   ],
+   [
+    "KD9JQU",
+    "Hoosier Lakes Radio Club",
+    "MENTONE",
+    "KD9DPA"
+   ],
+   [
+    "KK9TC",
+    "Tri County HF Society",
+    "METAMORA",
+    "N9VO"
+   ],
+   [
+    "W9LY",
+    "MICHIGAN CITY AMATEUR RADIO CLUB",
+    "MICHIGAN CITY",
+    "W9DWS"
+   ],
+   [
+    "KS9K",
+    "LOW PROFILE CONTEST CLUB",
+    "MIDDLETOWN",
+    "N4TZ"
+   ],
+   [
+    "K8LUC",
+    "EVENDALE AMATEUR RADIO SOCIETY",
+    "MILAN",
+    "WG9F"
+   ],
+   [
+    "KD9EMV",
+    "Ad Hoc Amateur Radio Society",
+    "MILAN",
+    "AA9SN"
+   ],
+   [
+    "W9PHM",
+    "PHM AMATEUR RADIO CLUB",
+    "MISHAWAKA",
+    "KD9SR"
+   ],
+   [
+    "K9BBS",
+    "Hoosier Amateur Radio Digital Society",
+    "MITCHELL",
+    "N9LYA"
+   ],
+   [
+    "K9UY",
+    "Hoosier Radio Society",
+    "MITCHELL",
+    "KC9JIH"
+   ],
+   [
+    "W9BBS",
+    "Hoosier Amateur Radio Digital Society",
+    "MITCHELL",
+    "N9LYA"
+   ],
+   [
+    "W9HU",
+    "Hoosier Radio Society",
+    "MITCHELL",
+    "KC9JIH"
+   ],
+   [
+    "W9OTR",
+    "Hoosier Am. Radio Digital Society",
+    "MITCHELL",
+    "N9LYA"
+   ],
+   [
+    "KC9PQA",
+    "White County Amateur Radio Society",
+    "MONTICELLO",
+    "K9DCO"
+   ],
+   [
+    "K9PYI",
+    "MORGAN COUNTY REPEATER ASSOCIATION INC",
+    "MOORESVILLE",
+    "WB9PGW"
+   ],
+   [
+    "KC9SIL",
+    "Posey County Races ARC",
+    "MOUNT VERNON",
+    "W9HAU"
+   ],
+   [
+    "KD9TXX",
+    "Heritage Hall Christian School Radio Club",
+    "MUNCIE",
+    "KD9PNI"
+   ],
+   [
+    "N6DCS",
+    "Delaware County Sheriff Emergency Communications Posse",
+    "MUNCIE",
+    "NQ8E"
+   ],
+   [
+    "WA9RN",
+    "K9nzf Systems",
+    "MUNCIE",
+    "K9NZF"
+   ],
+   [
+    "WB9HXG",
+    "MUNCIE AREA AMATEUR RADIO CLUB",
+    "MUNCIE",
+    "KD9MNN"
+   ],
+   [
+    "WD9EOC",
+    "Delaware County EMA - Communications Auxiliary",
+    "MUNCIE",
+    "KC9RVL"
+   ],
+   [
+    "N9BCI",
+    "Brown County School Amateur Radio Club",
+    "NASHVILLE",
+    "N9VDT"
+   ],
+   [
+    "W1EOC",
+    "Brown County Emergency Indiana Auxcomm",
+    "NASHVILLE",
+    "KC9RB"
+   ],
+   [
+    "W9JBQ",
+    "Clark County Amateur Radio Club",
+    "NEW ALBANY",
+    "N7BBW"
+   ],
+   [
+    "W9OB",
+    "Henry County Amat Radio Club",
+    "NEW CASTLE",
+    "K9UOK"
+   ],
+   [
+    "WE9MA",
+    "Henry County ARES / RACES",
+    "NEW CASTLE",
+    "K9APR"
+   ],
+   [
+    "WS3LF",
+    "SouthEast LinuxFest Amateur Radio Club",
+    "NEW HARMONY",
+    "W9NB"
+   ],
+   [
+    "KS9KCC",
+    "NE Indiana CW",
+    "NEW HAVEN",
+    "N8KR"
+   ],
+   [
+    "WD7G",
+    "Ogemaw CW Group",
+    "NEW HAVEN",
+    "W9HT"
+   ],
+   [
+    "KT9K",
+    "Ohio Valley Amateur Radio Club",
+    "NEWBURGH",
+    "AE9OZ"
+   ],
+   [
+    "W9NRC",
+    "Newburgh Amateur Radio Club",
+    "NEWBURGH",
+    "WA2USA"
+   ],
+   [
+    "KB9FVJ",
+    "Hamilton County Amateur Radio Emergency Service",
+    "NOBLESVILLE",
+    "W9KD"
+   ],
+   [
+    "N9EOC",
+    "HAMILTON COUNTY AMATEUR RADIO EMERGENCY SERVICE",
+    "NOBLESVILLE",
+    "W9KD"
+   ],
+   [
+    "W9ELI",
+    "LILLY AMATEUR RADIO CLUB",
+    "NOBLESVILLE",
+    "K9ZX"
+   ],
+   [
+    "ND1U",
+    "NOTRE DAME AMATEUR RADIO CLUB",
+    "NOTRE DAME",
+    "WD4MSM"
+   ],
+   [
+    "KB9OHY",
+    "ORANGE COUNTY ARC",
+    "ORLEANS",
+    "KB9HUO"
+   ],
+   [
+    "AE9U",
+    "ELKHART AMATEUR RADIO CLUB",
+    "OSCEOLA",
+    "WA5PSE"
+   ],
+   [
+    "KE9CSP",
+    "Pendleton Amateur Radio Club",
+    "PENDLETON",
+    "KD9ISO"
+   ],
+   [
+    "K9ZEV",
+    "MIAMI COUNTY AMATEUR RADIO CLUB",
+    "PERU",
+    "KD9HPN"
+   ],
+   [
+    "W9UL",
+    "PIKE COUNTY AMATEUR RADIO CLUB",
+    "PETERSBURG",
+    "KA9LMZ"
+   ],
+   [
+    "WB7EED",
+    "HEALTHCARE AMERICA RADIO CLUB",
+    "PIERCETON",
+    "N1LL"
+   ],
+   [
+    "W9ARP",
+    "WABASH AMATEURS FOR RADIO PROPAGATION",
+    "PINE VILLAGE",
+    "K9YK"
+   ],
+   [
+    "KO9F",
+    "Dillmans Amateur Radio Experimenters",
+    "PLAINFIELD",
+    "WB9CIF"
+   ],
+   [
+    "N8PAL",
+    "Detroit Masonic Temple Amateur Radio Association",
+    "PLAINFIELD",
+    "KA9PAZ"
+   ],
+   [
+    "N9HC",
+    "Hendricks County Amateur Radio Society",
+    "PLAINFIELD",
+    "N9CQ"
+   ],
+   [
+    "W9RCN",
+    "Michigan Indiana Regional Radio Association",
+    "PLAINFIELD",
+    "KA9PAY"
+   ],
+   [
+    "K9ODF",
+    "Ogden Dunes Amateur Radio Club",
+    "PORTAGE",
+    "N9MMR"
+   ],
+   [
+    "K9SNQ",
+    "Northern Indiana Amateur Radio Club",
+    "PORTAGE",
+    "KA9EFD"
+   ],
+   [
+    "NI9CA",
+    "Northern Indiana Communications Association",
+    "PORTAGE",
+    "AD9CB"
+   ],
+   [
+    "W9BUZ",
+    "Port Of Indiana Amateur Radio Club",
+    "PORTAGE",
+    "AF9U"
+   ],
+   [
+    "W9JCA",
+    "Jay County Amateur Radio Club",
+    "PORTLAND",
+    "KE9F"
+   ],
+   [
+    "KB9NEJ",
+    "SOUTHERN INDIANA MOBILE EMERGENCY TEAM",
+    "PRINCETON",
+    "N9LJA"
+   ],
+   [
+    "KB9TYQ",
+    "WAYNE COUNTY EMERGENCY MANAGEMENT AGENCY",
+    "RICHMOND",
+    "KB9SJZ"
+   ],
+   [
+    "N9JM",
+    "WHITEWATER VALLEY RADIO CLUB",
+    "RICHMOND",
+    "N9PTK"
+   ],
+   [
+    "N9RPL",
+    "EMERGENCY RADIO CLUB OF RICHMOND INDIANA",
+    "RICHMOND",
+    "W0RM"
+   ],
+   [
+    "K9RCR",
+    "Fulton County Amateur Radio Club",
+    "ROCHESTER",
+    "WD8IEJ"
+   ],
+   [
+    "K9ITK",
+    "TERRE HAUTE RADIO CLUB",
+    "ROSEDALE",
+    "AD0TY"
+   ],
+   [
+    "KB9KPG",
+    "Washington County Amateur Radio Club",
+    "SALEM",
+    "N9RMW"
+   ],
+   [
+    "KC9TME",
+    "Jennings County Amateur Radio Association Inc",
+    "SCIPIO",
+    "KC9PIE"
+   ],
+   [
+    "KD9RQS",
+    "Clark County Amateur Radio Club Of Indiana",
+    "SELLERSBURG",
+    "W9LHF"
+   ],
+   [
+    "W9WWI",
+    "CLARK COUNTY AMATEUR RADIO CLUB",
+    "SELLERSBURG",
+    "K9ZF"
+   ],
+   [
+    "W9GO",
+    "KOKOMO AMATEUR RADIO CLUB",
+    "SHARPSVILLE",
+    "AB9VJ"
+   ],
+   [
+    "W9NTP",
+    "BLUE RIVER VALLEY AMATEUR RADIO SOCIETY",
+    "SHELBYVILLE",
+    "K9SVL"
+   ],
+   [
+    "K9MRT",
+    "Martin County Amateur Radio Club",
+    "SHOALS",
+    "KA9RCM"
+   ],
+   [
+    "KB9ORX",
+    "POTATO CREEK PORTABLE",
+    "SOUTH BEND",
+    "N9YOU"
+   ],
+   [
+    "W9AB",
+    "MICHIANA AMATEUR RADIO CLUB INC",
+    "SOUTH BEND",
+    "N9UH"
+   ],
+   [
+    "WB9AGX",
+    "SAINT JOSEPH COUNTY EMA",
+    "SOUTH BEND",
+    "WA9RFY"
+   ],
+   [
+    "K9QZX",
+    "OWEN COUNTY AMATEUR RADIO ASSOCIATION",
+    "SPENCER",
+    "K9PS"
+   ],
+   [
+    "WK9R",
+    "INDIANA DX AND CONTEST CLUB",
+    "STRAUGHN",
+    "N4BAA"
+   ],
+   [
+    "WB9UCF",
+    "FISHER BODY AMATEUR RADIO CLUB",
+    "SUMMITVILLE",
+    "WD9IQV"
+   ],
+   [
+    "K3SCA",
+    "Pennsic Amateur Radio Club",
+    "SYRACUSE",
+    "KB9AVO"
+   ],
+   [
+    "KC9OBN",
+    "PERRY COUNTY RACES",
+    "TELL CITY",
+    "KD9LX"
+   ],
+   [
+    "K9IKQ",
+    "WABASH VALLEY AMATEUR RADIO ASSOCIATION INC",
+    "TERRE HAUTE",
+    "K9YPM"
+   ],
+   [
+    "K9THN",
+    "Terre Haute North HS Radio Club",
+    "TERRE HAUTE",
+    "N9TH"
+   ],
+   [
+    "KC9SJJ",
+    "VIGO COUNTY EMERGENCY COMMUNICATIONS TEAM",
+    "TERRE HAUTE",
+    "K9DLB"
+   ],
+   [
+    "KT9E",
+    "EASTSIDE OUTDOOR HAM CLUB",
+    "TERRE HAUTE",
+    "WB9ZHC"
+   ],
+   [
+    "W9ISU",
+    "INDIANA STATE UNIVERSITY AMATEUR RADIO CLUB",
+    "TERRE HAUTE",
+    "N9RNV"
+   ],
+   [
+    "W9NAA",
+    "ROSE TECH RADIO CLUB",
+    "TERRE HAUTE",
+    "KC4HCJ"
+   ],
+   [
+    "W9UUU",
+    "Wabash Valley Amateur Radio Association Inc",
+    "TERRE HAUTE",
+    "K9YPM"
+   ],
+   [
+    "K9TRC",
+    "TIPTON COUNTY AMATEUR RADIO CLUB",
+    "TIPTON",
+    "K9LWC"
+   ],
+   [
+    "W9BCI",
+    "AMATEUR RADIO CLUB OF BROWN COUNTY",
+    "TRAFALGAR",
+    "K9VM"
+   ],
+   [
+    "K9PC",
+    "PORTER COUNTY AMAT RAD CLUB",
+    "VALPARAISO",
+    "N9TAX"
+   ],
+   [
+    "KI9EMA",
+    "PORTER COUNTY EMERGENCY MANAGEMENT",
+    "VALPARAISO",
+    "KC9EJL"
+   ],
+   [
+    "WX9NWI",
+    "Indiana District 1 Skywarn",
+    "VALPARAISO",
+    "W9MDM"
+   ],
+   [
+    "KA9EMA",
+    "RIPLEY COUNTY AUXCOMM",
+    "VERSAILLES",
+    "KB9SDA"
+   ],
+   [
+    "KC9MBX",
+    "Ripley County Repeater Association",
+    "VERSAILLES",
+    "KB9UVG"
+   ],
+   [
+    "KC9EM",
+    "Knox County Emergency Management & RACES Group",
+    "VINCENNES",
+    "KC9CW"
+   ],
+   [
+    "K9WCR",
+    "Wabash County EMA ARC",
+    "WABASH",
+    "KW9UAX"
+   ],
+   [
+    "KB9LDZ",
+    "WABASH COUNTY AMATEUR RADIO CLUB INC",
+    "WABASH",
+    "K9BP"
+   ],
+   [
+    "WA0OTU",
+    "Wadesville Amateur Radio Society",
+    "WADESVILLE",
+    "KA9NOO"
+   ],
+   [
+    "K9CWD",
+    "HOOSIER LAKES RADIO CLUB",
+    "WARSAW",
+    "K9GV"
+   ],
+   [
+    "KD9WZG",
+    "Indiana D2 ARC",
+    "WARSAW",
+    "KD9EDR"
+   ],
+   [
+    "WX9IWX",
+    "NATIONAL WEATHER SERVICE SKYWARN",
+    "WARSAW",
+    "WX9PAT"
+   ],
+   [
+    "KC9SFL",
+    "Daviess County Amateur Radio Club",
+    "WASHINGTON",
+    "KC9HTC"
+   ],
+   [
+    "W9ILS",
+    "Indiana Link South",
+    "WASHINGTON",
+    "KC9ZAR"
+   ],
+   [
+    "WA9IN",
+    "DAVIESS COUNTY EMERGENCY MANAGEMENT AGNCY",
+    "WASHINGTON",
+    "KB9TUO"
+   ],
+   [
+    "KB9GYO",
+    "LAUGHERY VALLEY ARC",
+    "WEST HARRISON",
+    "KY4TS"
+   ],
+   [
+    "AB1HZ",
+    "Dhahran Amateur Radio Club Of America",
+    "WEST LAFAYETTE",
+    "N9NWO"
+   ],
+   [
+    "W9YB",
+    "PURDUE AMATEUR RADIO CLUB",
+    "WEST LAFAYETTE",
+    "K9ELF"
+   ],
+   [
+    "W9KT",
+    "Banks Of The Wabash Chapter 204 QCWA",
+    "WEST TERRE HAUTE",
+    "K9DUR"
+   ],
+   [
+    "KD9YPY",
+    "Piglet Radio Club",
+    "WESTFIELD",
+    "N9TD"
+   ],
+   [
+    "N9BCN",
+    "Piglet Radio Inc",
+    "WESTFIELD",
+    "N9TD"
+   ],
+   [
+    "WA9RP",
+    "HAMILTON COUNTY RADIO AMATEURS",
+    "WESTFIELD",
+    "K9RMP"
+   ],
+   [
+    "WB9ARC",
+    "BI-STATE AMATEUR RADIO CLUB",
+    "WILLIAMSPORT",
+    "W9ABH"
+   ],
+   [
+    "WD9EXZ",
+    "RANDOLPH AMATEUR RADIO CLUB INC",
+    "WINCHESTER",
+    "KC9CWN"
+   ],
+   [
+    "WF9DHS",
+    "WCHS/DMS AMATEUR RADIO CLUB",
+    "WINCHESTER",
+    "KD9BGS"
+   ],
+   [
+    "W9ECI",
+    "EmComm ECI",
+    "YORKTOWN",
+    "KB9ZUV"
+   ],
+   [
+    "W9YFD",
+    "Yorktown Fire Department",
+    "YORKTOWN",
+    "N1ESB"
+   ]
+  ]
+ },
+ "clubs_in_muncie": {
+  "columns": [
+   "call_sign",
+   "club",
+   "city",
+   "trustee_call_sign"
+  ],
+  "rows": [
+   [
+    "KD9TXX",
+    "Heritage Hall Christian School Radio Club",
+    "MUNCIE",
+    "KD9PNI"
+   ],
+   [
+    "N6DCS",
+    "Delaware County Sheriff Emergency Communications Posse",
+    "MUNCIE",
+    "NQ8E"
+   ],
+   [
+    "WA9RN",
+    "K9nzf Systems",
+    "MUNCIE",
+    "K9NZF"
+   ],
+   [
+    "WB9HXG",
+    "MUNCIE AREA AMATEUR RADIO CLUB",
+    "MUNCIE",
+    "KD9MNN"
+   ],
+   [
+    "WD9EOC",
+    "Delaware County EMA - Communications Auxiliary",
+    "MUNCIE",
+    "KC9RVL"
+   ]
+  ]
+ },
+ "extra_share": {
+  "columns": [
+   "city",
+   "operators",
+   "extras",
+   "extra_pct"
+  ],
+  "rows": [
+   [
+    "NEWBURGH",
+    111,
+    35,
+    31.5
+   ],
+   [
+    "RICHMOND",
+    122,
+    37,
+    30.3
+   ],
+   [
+    "COLUMBIA CITY",
+    102,
+    28,
+    27.5
+   ],
+   [
+    "VALPARAISO",
+    221,
+    60,
+    27.1
+   ],
+   [
+    "FORT WAYNE",
+    760,
+    202,
+    26.6
+   ],
+   [
+    "WESTFIELD",
+    118,
+    31,
+    26.3
+   ],
+   [
+    "KOKOMO",
+    257,
+    67,
+    26.1
+   ],
+   [
+    "COLUMBUS",
+    224,
+    58,
+    25.9
+   ],
+   [
+    "LA PORTE",
+    101,
+    26,
+    25.7
+   ],
+   [
+    "GREENFIELD",
+    147,
+    36,
+    24.5
+   ],
+   [
+    "FISHERS",
+    232,
+    55,
+    23.7
+   ],
+   [
+    "GREENWOOD",
+    212,
+    50,
+    23.6
+   ],
+   [
+    "TERRE HAUTE",
+    322,
+    74,
+    23.0
+   ],
+   [
+    "WEST LAFAYETTE",
+    218,
+    50,
+    22.9
+   ],
+   [
+    "CARMEL",
+    266,
+    60,
+    22.6
+   ],
+   [
+    "CROWN POINT",
+    104,
+    23,
+    22.1
+   ],
+   [
+    "EVANSVILLE",
+    355,
+    76,
+    21.4
+   ],
+   [
+    "ANDERSON",
+    228,
+    47,
+    20.6
+   ],
+   [
+    "GOSHEN",
+    146,
+    30,
+    20.5
+   ],
+   [
+    "HUNTINGTON",
+    100,
+    20,
+    20.0
+   ],
+   [
+    "NOBLESVILLE",
+    222,
+    44,
+    19.8
+   ],
+   [
+    "AVON",
+    132,
+    26,
+    19.7
+   ],
+   [
+    "ELKHART",
+    198,
+    39,
+    19.7
+   ],
+   [
+    "LAFAYETTE",
+    248,
+    48,
+    19.4
+   ],
+   [
+    "INDIANAPOLIS",
+    1409,
+    264,
+    18.7
+   ],
+   [
+    "BROWNSBURG",
+    125,
+    23,
+    18.4
+   ],
+   [
+    "MARION",
+    104,
+    19,
+    18.3
+   ],
+   [
+    "WARSAW",
+    141,
+    25,
+    17.7
+   ],
+   [
+    "MUNCIE",
+    177,
+    31,
+    17.5
+   ],
+   [
+    "SOUTH BEND",
+    294,
+    50,
+    17.0
+   ],
+   [
+    "BLOOMINGTON",
+    393,
+    66,
+    16.8
+   ],
+   [
+    "BEDFORD",
+    122,
+    16,
+    13.1
+   ],
+   [
+    "MARTINSVILLE",
+    118,
+    13,
+    11.0
+   ],
+   [
+    "PERU",
+    119,
+    10,
+    8.4
+   ]
+  ]
+ },
+ "zip_regions": {
+  "columns": [
+   "zip3",
+   "operators"
+  ],
+  "rows": [
+   [
+    "461",
+    1752
+   ],
+   [
+    "460",
+    1733
+   ],
+   [
+    "462",
+    1451
+   ],
+   [
+    "463",
+    1358
+   ],
+   [
+    "465",
+    1191
+   ],
+   [
+    "467",
+    1031
+   ],
+   [
+    "469",
+    967
+   ],
+   [
+    "474",
+    954
+   ],
+   [
+    "473",
+    829
+   ],
+   [
+    "479",
+    794
+   ],
+   [
+    "468",
+    787
+   ],
+   [
+    "471",
+    754
+   ],
+   [
+    "478",
+    607
+   ],
+   [
+    "472",
+    539
+   ],
+   [
+    "475",
+    436
+   ],
+   [
+    "477",
+    359
+   ],
+   [
+    "476",
+    351
+   ],
+   [
+    "466",
+    297
+   ],
+   [
+    "470",
+    275
+   ],
+   [
+    "464",
+    88
+   ],
+   [
+    "424",
+    1
+   ],
+   [
+    "436",
+    1
+   ],
+   [
+    "454",
+    1
+   ],
+   [
+    "490",
+    1
+   ],
+   [
+    "491",
+    1
+   ]
+  ]
+ }
+}
