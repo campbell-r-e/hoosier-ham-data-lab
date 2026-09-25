@@ -65,6 +65,7 @@ URL = "https://data.fcc.gov/download/pub/uls/complete/l_amat.zip"
 HERE = Path(__file__).resolve().parent
 DATA = HERE / "data"
 ZIP_PATH = DATA / "l_amat.zip"
+META_PATH = DATA / "l_amat.release"       # the FCC's Last-Modified for our copy
 TABLE_PATH = DATA / "licenses.parquet"
 SAMPLE_ZIP = HERE / "tests" / "data" / "l_amat_indiana.zip"
 SAMPLE_TABLE = DATA / "licenses-indiana-sample.parquet"
@@ -97,6 +98,7 @@ def download(refresh=False):
     # browser's "Mozilla/5.0", is refused too (checked 2026-09-25).
     request = urllib.request.Request(URL, headers={"User-Agent": USER_AGENT, "Accept": "*/*"})
     with urllib.request.urlopen(request, timeout=60) as response, open(tmp, "wb") as out:
+        release = response.headers.get("Last-Modified", "")
         total = int(response.headers.get("Content-Length") or 0)
         done = 0
         while chunk := response.read(1 << 20):
@@ -106,7 +108,21 @@ def download(refresh=False):
                 print(f"\r  {done / 1e6:6.0f} of {total / 1e6:.0f} MB", end="", flush=True)
     print()
     tmp.replace(ZIP_PATH)
+    META_PATH.write_text(release)
     return ZIP_PATH
+
+
+def release():
+    """When the FCC published the copy in data/, as its server said, or None."""
+    try:
+        return META_PATH.read_text().strip() or None
+    except OSError:
+        return None
+
+
+def have_full_download():
+    """True once the whole-country table exists, not just the Indiana snapshot."""
+    return TABLE_PATH.exists()
 
 
 def read_member(zf, record_type, columns):

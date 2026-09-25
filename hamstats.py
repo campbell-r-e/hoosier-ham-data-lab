@@ -10,6 +10,7 @@
     uv run python hamstats.py clubs --state IN --city Muncie
     uv run python hamstats.py extras --state IN --min 50
     uv run python hamstats.py zips --state IN
+    uv run python hamstats.py export       # everything, as the site will use it
 
 Every command takes:
     --engine pandas|polars|both   whose code answers (default pandas); "both"
@@ -29,6 +30,7 @@ When you have written them all, add a command of your own: write the function
 in both analytics files, then add it to COMMANDS below (see the BONUS note).
 """
 import argparse
+import json
 import sys
 from datetime import date
 from pathlib import Path
@@ -39,6 +41,7 @@ import polars as pl
 import analytics_pandas
 import analytics_polars
 import fcc_data
+import insights
 
 OUTPUT = Path(__file__).resolve().parent / "output"
 
@@ -150,15 +153,57 @@ def answer_with(engine, name, args, argfn):
         return False, None
 
 
+def export(args):
+    """Every answer, from both engines, into output/fccInsights.json -- but only
+    when both engines are written and agree. This file is what the site gets."""
+    if not fcc_data.have_full_download() and not args.allow_sample:
+        print("export needs the whole-country file (the neighbors and national figures come from it).\n"
+              "Run `uv run python fcc_data.py` first, or add --allow-sample to try it on the Indiana snapshot.")
+        return 1
+    today = date.fromisoformat(args.today) if args.today else date.today()
+    frames = {engine: LOADERS[engine]() for engine in ("pandas", "polars")}
+    docs = {}
+    for engine in ("pandas", "polars"):
+        try:
+            docs[engine] = insights.build(frames[engine], MODULES[engine], today,
+                                          fcc_data.release(), sample=not fcc_data.have_full_download())
+        except NotImplementedError as e:
+            print(f"Not exported: {e} is not written yet.")
+            return 1
+    wrong = [name for name in insights.SECTIONS
+             if not same_answer(pd.json_normalize(_rows(docs["pandas"][name])),
+                                pd.json_normalize(_rows(docs["polars"][name])))]
+    if wrong:
+        print("Not exported: pandas and polars disagree on " + ", ".join(wrong) + ".")
+        return 1
+    OUTPUT.mkdir(exist_ok=True)
+    path = OUTPUT / "fccInsights.json"
+    path.write_text(json.dumps(docs["pandas"], indent=1) + "\n")
+    print(f"pandas and polars agree on all {len(insights.SECTIONS)} sections; wrote {path.relative_to(OUTPUT.parent)}")
+    return 0
+
+
+def _rows(section):
+    """A section's rows, whether it is a list or an object holding one."""
+    if isinstance(section, dict):
+        return next(v for v in section.values() if isinstance(v, list))
+    return section
+
+
 def main(argv=None):
     parser = argparse.ArgumentParser(prog="hamstats", description=__doc__.splitlines()[0])
     sub = parser.add_subparsers(dest="command", required=True)
+    ex = sub.add_parser("export", help="every answer, as the site will use it (output/fccInsights.json)")
+    ex.add_argument("--today", help="pretend today is YYYY-MM-DD")
+    ex.add_argument("--allow-sample", action="store_true", help="export from the Indiana snapshot (for trying it out)")
     for command, (name, help_text, add_options, _) in COMMANDS.items():
         p = sub.add_parser(command, help=help_text)
         add_options(p)
         p.add_argument("--engine", choices=["pandas", "polars", "both"], default="pandas")
         p.add_argument("--csv", action="store_true", help="also save to output/<command>.csv")
     args = parser.parse_args(argv)
+    if args.command == "export":
+        return export(args)
     if not hasattr(args, "today"):
         args.today = None
 

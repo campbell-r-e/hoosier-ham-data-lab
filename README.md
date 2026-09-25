@@ -32,7 +32,7 @@ uv run pytest                    # most tests fail at first; that's the to-do li
 
 That's enough to start. Until you download the full database, the program
 uses `tests/data/l_amat_indiana.zip`. That file is every Indiana license from
-the FCC release of September 25, 2026: 33,619 real licenses.
+the FCC release of September 25, 2026: 33,619 real licenses, full records.
 
 When you want the whole country, current as of this week (a ~200 MB download):
 
@@ -54,6 +54,7 @@ uv run python fcc_data.py
 | `renewals --state IN --months 12` | Licenses coming up for renewal each month | `renewals_due` |
 | `classes --state IN` | License classes, the state vs. the country | `class_mix` |
 | `formats --state IN` | Call sign shapes (1x2, 2x3 ...) and vanity share | `call_formats` |
+| `export` | All of the above, as the site will publish it | *(built from yours)* |
 
 They're listed roughly easiest to hardest. Do them in that order.
 
@@ -83,6 +84,28 @@ files, then add it to `COMMANDS` in `hamstats.py`. The BONUS comment there
 shows how. Some ideas: who upgraded their license class, how many licenses
 were granted each year, or the most common first letter after the 9.
 
+## Where your code ends up
+
+indianahamradio.com gets its FCC numbers from a service on the site's own
+server, which loads the FCC file every week. When every question is answered,
+that service can use your `analytics_pandas.py` as-is to publish these answers
+on the site.
+
+`uv run python hamstats.py export` shows exactly what it would publish. It
+runs every question for Indiana through both of your versions and writes
+`output/fccInsights.json`. It refuses to write the file if any question is
+unwritten, if pandas and polars disagree, or if you only have the Indiana
+snapshot. [docs/SERVICE.md](docs/SERVICE.md) describes the file and how the
+service picks your code up.
+
+Two things follow from that:
+
+- **Your pandas code has to be right, not just pass.** It will answer
+  questions about real people's hobby on a public website.
+- **Stick to pandas.** The server is a 32-bit Linux box, and polars has no
+  build for it. Your polars version is the cross-check that proves the pandas
+  one right.
+
 ## What's in the data
 
 `fcc_data.py` describes every column at the top of the file. The short version:
@@ -95,5 +118,11 @@ The data is the FCC's Universal Licensing System amateur file,
 
 ## Be decent with it
 
-This is public data, and it names real people and their home addresses.
-Share counts and charts freely. Don't publish lists of individuals.
+This is public data, and the full FCC file names real people and their home
+addresses. Share counts and charts freely. Don't publish lists of individuals.
+That's why `export` only writes numbers and club stations.
+
+## License
+
+The code is MIT licensed (see `LICENSE`). The FCC data is a U.S. government
+work and in the public domain.
