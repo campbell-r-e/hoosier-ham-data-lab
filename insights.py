@@ -1,4 +1,4 @@
-"""Your answers, assembled into the document indianahamradio.com will use.
+"""Your answers, assembled into the document the website will use.
 
 The site does not compute FCC numbers itself. It reads them from the
 fcc-ham-counts service on meshserver, which loads the FCC file every week and
@@ -8,8 +8,10 @@ analytics_pandas.py is answered, that service can import your module, run
 ends up behind a page on the real site. docs/SERVICE.md says how.
 
 This file is finished; you do not need to change it. It fixes the questions
-the site asks (Indiana, its four neighbors, the top 25 towns ...) and the shape
-of the answer, which is the contract between your code and the service.
+the site asks (about one state and its neighbors, the top 25 towns ...) and the
+shape of the answer, which is the contract between your code and the service.
+Which state, and which neighbors, the caller says: the service takes them from
+the site's state profile.
 
     uv run python hamstats.py export          # writes output/fccInsights.json
 
@@ -17,28 +19,38 @@ Only numbers and club stations go in. No individual licensee ever appears in
 the document, because it will be published.
 """
 from datetime import date
+from typing import NamedTuple
 
 import pandas as pd
 
-STATE = "IN"
-NEIGHBORS = ["IN", "IL", "OH", "MI", "KY"]
 TOP_CITIES = 25
 MIN_OPERATORS = 50      # towns smaller than this make the Extra share meaningless
 RENEWAL_MONTHS = 12
 
+
+class Question(NamedTuple):
+    """What the document is about: the state (a postal code such as "IN"), the
+    neighboring states compared with it, and the day it is built for."""
+
+    state: str
+    neighbors: list
+    today: object
+
+
 # section name in the document: (question, arguments after df, wrapper)
-# The wrapper, when there is one, turns the rows into the section's object.
+# The arguments come from the Question; the wrapper, when there is one, turns
+# the rows into the section's object.
 SECTIONS = {
-    "neighbors": ("compare_states", lambda today: (NEIGHBORS,), None),
-    "classMix": ("class_mix", lambda today: (STATE,), None),
-    "topCities": ("top_cities", lambda today: (STATE, TOP_CITIES), None),
-    "zipRegions": ("zip_regions", lambda today: (STATE,), None),
-    "extraShare": ("extra_share", lambda today: (STATE, MIN_OPERATORS),
+    "neighbors": ("compare_states", lambda q: ([q.state, *q.neighbors],), None),
+    "classMix": ("class_mix", lambda q: (q.state,), None),
+    "topCities": ("top_cities", lambda q: (q.state, TOP_CITIES), None),
+    "zipRegions": ("zip_regions", lambda q: (q.state,), None),
+    "extraShare": ("extra_share", lambda q: (q.state, MIN_OPERATORS),
                    lambda rows, today: {"minOperators": MIN_OPERATORS, "towns": rows}),
-    "renewalsDue": ("renewals_due", lambda today: (STATE, RENEWAL_MONTHS, today),
+    "renewalsDue": ("renewals_due", lambda q: (q.state, RENEWAL_MONTHS, q.today),
                     lambda rows, today: {"from": str(today)[:10], "months": RENEWAL_MONTHS, "byMonth": rows}),
-    "callFormats": ("call_formats", lambda today: (STATE,), None),
-    "clubStations": ("clubs", lambda today: (STATE, None), None),
+    "callFormats": ("call_formats", lambda q: (q.state,), None),
+    "clubStations": ("clubs", lambda q: (q.state, None), None),
 }
 
 
@@ -67,23 +79,26 @@ def records(answer):
     return [{c: plain(v) for c, v in zip(columns, row)} for row in frame.itertuples(index=False)]
 
 
-def build(df, analytics, today=None, release=None, sample=False):
+def build(df, analytics, today=None, release=None, sample=False, *, state, neighbors):
     """The whole document, from `df` (the license table) and `analytics` (your
-    analytics_pandas or analytics_polars module). `today` is a date for pandas
-    code as a pandas Timestamp; defaults to the real today."""
+    analytics_pandas or analytics_polars module), about `state` (a postal code
+    such as "IN") against `neighbors` (the neighboring states' postal codes).
+    `today` is a date for pandas code as a pandas Timestamp; defaults to the
+    real today."""
     today = today if today is not None else date.today()
     arg_today = pd.Timestamp(today) if analytics.__name__.endswith("pandas") else today
+    ask = Question(state, list(neighbors), arg_today)
     doc = {
         "_generated": str(date.today()),
         "release": release,
         "source": "FCC Universal Licensing System, amateur license file (l_amat.zip)",
-        "state": STATE,
+        "state": state,
     }
     if sample:
         doc["sample"] = "Built from the Indiana-only snapshot, not the full FCC file: neighbors and national figures are wrong."
     for section, (question, argfn, wrap) in SECTIONS.items():
         try:
-            rows = records(getattr(analytics, question)(df, *argfn(arg_today)))
+            rows = records(getattr(analytics, question)(df, *argfn(ask)))
         except NotImplementedError:
             raise NotImplementedError(f"{analytics.__name__}.{question}") from None
         doc[section] = wrap(rows, today) if wrap else rows

@@ -42,6 +42,7 @@ import analytics_pandas
 import analytics_polars
 import fcc_data
 import insights
+import state_profile
 
 OUTPUT = Path(__file__).resolve().parent / "output"
 
@@ -160,13 +161,20 @@ def export(args):
         print("export needs the whole-country file (the neighbors and national figures come from it).\n"
               "Run `uv run python fcc_data.py` first, or add --allow-sample to try it on the Indiana snapshot.")
         return 1
+    try:
+        state = state_profile.load()
+        neighbors = list(state.require_neighbors())
+    except state_profile.ProfileError as e:
+        print(f"Not exported: {e}")
+        return 1
     today = date.fromisoformat(args.today) if args.today else date.today()
     frames = {engine: LOADERS[engine]() for engine in ("pandas", "polars")}
     docs = {}
     for engine in ("pandas", "polars"):
         try:
             docs[engine] = insights.build(frames[engine], MODULES[engine], today,
-                                          fcc_data.release(), sample=not fcc_data.have_full_download())
+                                          fcc_data.release(), sample=not fcc_data.have_full_download(),
+                                          state=state.postal_code, neighbors=neighbors)
         except NotImplementedError as e:
             print(f"Not exported: {e} is not written yet.")
             return 1
