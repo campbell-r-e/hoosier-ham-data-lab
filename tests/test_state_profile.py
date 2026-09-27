@@ -1,5 +1,6 @@
 """Reading the site's state profile: where it is found, what it must hold, and
 Indiana when nothing is configured. Northmark (NQ) is a made-up state."""
+import dataclasses
 import json
 
 import pytest
@@ -27,7 +28,10 @@ def test_reads_a_profile_json_directly_and_ignores_fields_it_does_not_use(tmp_pa
 
 def test_the_built_in_default_is_the_sites_indiana_profile(tmp_path):
     states = write_profile(tmp_path, SITE_INDIANA)
-    assert state_profile.read_profile(str(states)) == INDIANA
+    site = state_profile.read_profile(str(states))
+    # The same facts; only the neighbors' order is the lab's own (see INDIANA).
+    assert dataclasses.replace(site, neighbors=None) == dataclasses.replace(INDIANA, neighbors=None)
+    assert sorted(site.neighbors) == sorted(INDIANA.neighbors)
 
 
 def test_neighbors_are_optional_until_they_are_needed(tmp_path):
@@ -36,7 +40,7 @@ def test_neighbors_are_optional_until_they_are_needed(tmp_path):
     assert found.neighbors is None
     with pytest.raises(ProfileError, match="Northmark has no state.neighborPostalCodes"):
         found.require_neighbors()
-    assert INDIANA.require_neighbors() == ("IL", "KY", "MI", "OH")
+    assert INDIANA.require_neighbors() == ("IL", "OH", "MI", "KY")
 
 
 def test_a_missing_location_says_how_to_point_at_one(tmp_path):

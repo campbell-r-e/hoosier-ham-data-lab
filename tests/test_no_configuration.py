@@ -1,6 +1,6 @@
 """With nothing configured -- no FCCHAM_STATE_PROFILE, no profile anywhere --
 the program says exactly what it said before it could be about another state:
-Indiana, compared with IL, KY, MI and OH. conftest makes sure nothing is
+Indiana, compared with IL, OH, MI and KY in that order. conftest makes sure nothing is
 configured. These pass from the first day."""
 import json
 
@@ -37,7 +37,9 @@ def test_export_is_about_indiana_and_its_neighbors(made_up_path, monkeypatch, tm
         "pandas and polars agree on all 8 sections; wrote output/fccInsights.json\n")
     doc = json.loads(written.read_text())
     assert doc["state"] == "IN"
-    assert asked[("compare_states", "pandas")] == (["IN", "IL", "KY", "MI", "OH"],)
+    # The same states in the same order main asks for (insights.NEIGHBORS on
+    # main was ["IN", "IL", "OH", "MI", "KY"]), so her output cannot change.
+    assert asked[("compare_states", "pandas")] == (["IN", "IL", "OH", "MI", "KY"],)
     assert asked[("top_cities", "polars")] == ("IN", 25)
     # The same rows the old hard-coded [IN, IL, OH, MI, KY] gave: sorted, not asked order.
     assert doc["neighbors"] == [

@@ -64,8 +64,10 @@ class State:
 
 
 # The lab's default, the same facts as the site's state/indiana/profile.json.
+# The neighbors keep the order the lab has always asked for them in, so the
+# learner's export comes out exactly as before whatever her tie-break does.
 INDIANA = State(name="Indiana", slug="indiana", postal_code="IN", fips_code="18",
-                call_district="9", neighbors=("IL", "KY", "MI", "OH"))
+                call_district="9", neighbors=("IL", "OH", "MI", "KY"))
 
 
 def _text(value):
