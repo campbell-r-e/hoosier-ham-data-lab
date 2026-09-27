@@ -21,10 +21,11 @@ stations.
 
 ## The contract
 
-`insights.build(df, analytics_pandas, today, release)` returns the document.
-`hamstats export` writes it to `output/fccInsights.json`. The service will
-serve the same document, and the site will publish it as
-`public/data/fccInsights.json`.
+`insights.build(df, analytics_pandas, today, release, state=..., neighbors=...)`
+returns the document. `hamstats export` writes it to `output/fccInsights.json`.
+The service will serve the same document, and the site will publish it as
+`public/data/fccInsights.json`. Which state it is about, and which neighbors it
+is compared with, the caller says (see "Which state" below).
 
 ```jsonc
 {
@@ -32,7 +33,7 @@ serve the same document, and the site will publish it as
   "release": "Sun, 20 Sep 2026 ...",     // the FCC's Last-Modified for the file used
   "source": "FCC Universal Licensing System, amateur license file (l_amat.zip)",
   "state": "IN",
-  "neighbors":   [{"state", "operators", "clubs"}],                 // IN, IL, OH, MI, KY
+  "neighbors":   [{"state", "operators", "clubs"}],                 // the state and its neighbors
   "classMix":    [{"licenseClass", "statePct", "usPct"}],
   "topCities":   [{"city", "operators"}],                           // top 25
   "zipRegions":  [{"zip3", "operators"}],
@@ -46,6 +47,33 @@ serve the same document, and the site will publish it as
 Keys are camelCase to match the site's other data files (`countyStats.json`,
 `licenseTrends.json`). The document holds counts and club stations only, never
 an individual licensee.
+
+## Which state
+
+The site describes its state in one file, `state/<slug>/profile.json` in the
+website repository, and fcc-ham-counts reads it (`fccham/state.py`). The lab
+reads the same file, in `state_profile.py`, so `hamstats export` builds the
+document about the state the service would publish: `state.postalCode`, and
+`state.neighborPostalCodes` for the neighbors comparison.
+
+Where the lab looks, first match wins:
+
+1. the `FCCHAM_STATE_PROFILE` environment variable: the site's `state/`
+   folder (holding exactly one state's folder) or a `profile.json` itself;
+2. `/opt/fcc-ham-counts-state/state`, the service's copy, when it exists;
+3. otherwise Indiana, built in and matching the site's Indiana profile.
+
+So a learner never configures anything: with nothing set, everything is
+Indiana, exactly as before. A profile that is named but missing or unsound
+stops `export` (and `fcc_data.py`) with the reason, never a quiet fallback to
+Indiana.
+
+Only the export and `fcc_data.py`'s closing summary follow the profile. The
+exercises, their `--state IN` defaults, the Indiana snapshot and the tests'
+expected answers are about Indiana on purpose: they are the lessons.
+
+`insights.py` is the same contract as the service's copy in `fccham/lab/`, so
+`deploy/sync-lab.sh` carries it over unchanged in behavior.
 
 ## Why the service runs the pandas version
 

@@ -18,6 +18,7 @@ ROOT = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(ROOT))
 
 import fcc_data  # noqa: E402
+import state_profile  # noqa: E402
 
 INDIANA_ZIP = Path(__file__).parent / "data" / "l_amat_indiana.zip"
 
@@ -49,9 +50,9 @@ def _row(record_type, width, values):
     return "|".join(fields)
 
 
-def write_made_up_zip(path):
+def write_made_up_zip(path, licenses=LICENSES):
     hd, en, am = [], [], []
-    for usi, call, status, service, expires, applicant, name, city, state, zip_code, cls, trustee in LICENSES:
+    for usi, call, status, service, expires, applicant, name, city, state, zip_code, cls, trustee in licenses:
         values = {1: str(usi), 4: call, 5: status, 6: service, 7: "01/01/2020", 8: expires}
         if usi == 15:
             # A value with a line break in it splits a record over two lines,
@@ -96,3 +97,11 @@ def made_up_path(made_up_table):
 def indiana(tmp_path_factory):
     """{"pandas": DataFrame, "polars": DataFrame} of every Indiana license, 2026-09-25."""
     return _load(INDIANA_ZIP, tmp_path_factory.mktemp("indiana"))[1]
+
+
+@pytest.fixture(autouse=True)
+def no_state_configured(monkeypatch, tmp_path):
+    """Every test starts the way a learner's machine is: no FCCHAM_STATE_PROFILE
+    and no service copy of the site's profile, so the lab answers Indiana."""
+    monkeypatch.delenv(state_profile.ENV_VAR, raising=False)
+    monkeypatch.setattr(state_profile, "SERVICE_LOCATION", str(tmp_path / "no-service-profile"))

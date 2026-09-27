@@ -61,6 +61,8 @@ from pathlib import Path
 
 import polars as pl
 
+import state_profile
+
 URL = "https://data.fcc.gov/download/pub/uls/complete/l_amat.zip"
 HERE = Path(__file__).resolve().parent
 DATA = HERE / "data"
@@ -206,6 +208,10 @@ def main(argv=None):
     parser = argparse.ArgumentParser(description=__doc__.splitlines()[0])
     parser.add_argument("--refresh", action="store_true", help="download again even if a recent copy exists")
     args = parser.parse_args(argv)
+    try:
+        state = state_profile.load()
+    except state_profile.ProfileError as e:
+        sys.exit(str(e))
     zip_path = download(refresh=args.refresh)
     if args.refresh or not TABLE_PATH.exists() or TABLE_PATH.stat().st_mtime < zip_path.stat().st_mtime:
         build(zip_path)
@@ -214,7 +220,7 @@ def main(argv=None):
     df = load_polars()
     active = df.filter(pl.col("status") == "A")
     print(f"{df.height:,} licenses in the file, {active.height:,} active, "
-          f"{active.filter(pl.col('state') == 'IN').height:,} of those in Indiana.")
+          f"{active.filter(pl.col('state') == state.postal_code).height:,} of those in {state.name}.")
 
 
 if __name__ == "__main__":
