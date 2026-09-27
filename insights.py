@@ -33,8 +33,8 @@ class Question(NamedTuple):
     neighboring states compared with it, and the day it is built for."""
 
     state: str
-    neighbors: list
-    today: object
+    neighbors: list[str]
+    today: date | pd.Timestamp
 
 
 # section name in the document: (question, arguments after df, wrapper)

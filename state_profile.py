@@ -51,8 +51,7 @@ class State:
     postal_code: str
     fips_code: str
     call_district: str
-    # The neighboring states' postal codes, or None when the profile lists none.
-    neighbors: tuple
+    neighbors: tuple | None
 
     def require_neighbors(self):
         """The neighbors, or ProfileError when the profile lists none."""
