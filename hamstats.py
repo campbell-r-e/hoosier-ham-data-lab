@@ -154,6 +154,17 @@ def answer_with(engine, name, args, argfn):
         return False, None
 
 
+def _export_state():
+    """The site's state profile, resolved to (postal_code, neighbors) -- or,
+    when the profile can't be used, the reason printed and None returned."""
+    try:
+        state = state_profile.load()
+        return state.postal_code, list(state.require_neighbors())
+    except state_profile.ProfileError as e:
+        print(f"Not exported: {e}")
+        return None
+
+
 def export(args):
     """Every answer, from both engines, into output/fccInsights.json -- but only
     when both engines are written and agree. This file is what the site gets."""
@@ -161,12 +172,10 @@ def export(args):
         print("export needs the whole-country file (the neighbors and national figures come from it).\n"
               "Run `uv run python fcc_data.py` first, or add --allow-sample to try it on the Indiana snapshot.")
         return 1
-    try:
-        state = state_profile.load()
-        neighbors = list(state.require_neighbors())
-    except state_profile.ProfileError as e:
-        print(f"Not exported: {e}")
+    resolved = _export_state()
+    if resolved is None:
         return 1
+    state_postal, neighbors = resolved
     today = date.fromisoformat(args.today) if args.today else date.today()
     frames = {engine: LOADERS[engine]() for engine in ("pandas", "polars")}
     docs = {}
@@ -174,7 +183,7 @@ def export(args):
         try:
             docs[engine] = insights.build(frames[engine], MODULES[engine], today,
                                           fcc_data.release(), sample=not fcc_data.have_full_download(),
-                                          state=state.postal_code, neighbors=neighbors)
+                                          state=state_postal, neighbors=neighbors)
         except NotImplementedError as e:
             print(f"Not exported: {e} is not written yet.")
             return 1
